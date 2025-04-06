@@ -80,6 +80,9 @@ pip install -r requirements.txt
 2. CLI
 ![Screenshot 2025-04-06 at 3 58 10 PM](https://github.com/user-attachments/assets/2f48dcfb-6f38-43d6-b066-03ac16aa2f13)
 
+### Demo
+https://dark-web-monitoring.streamlit.app/
+
 The script will automatically:
 - Search all configured dark web sources
 - Show real-time progress for each source
