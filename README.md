@@ -139,9 +139,8 @@ The tool currently searches across the following dark web sources:
 ## Output Screenshots
 
 Here's what the tool looks like in action:
+![Screenshot 2025-04-06 at 3 58 10 PM](https://github.com/user-attachments/assets/1c35f3a6-badb-434c-a9ec-0e05c7f8b39d)
 
-![Dark Web Monitor Output](screenshots/output.png)
-![Search Results](screenshots/results.png)
 
 *Note: Place your screenshots in a `screenshots` folder in the root directory of the project with the names `output.png` and `results.png`*
 
