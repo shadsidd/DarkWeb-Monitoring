@@ -1,16 +1,126 @@
-# Dark Web Monitoring Tool
+# Dark Web Monitor 🕵️
 
-⚠️ **Educational Purposes Only** ⚠️
+A tool for educational purposes to monitor dark web sources for organization mentions. This tool supports both a web-based UI and command-line interface.
 
-A Python-based tool that monitors dark web sources for mentions of specific organizations For Threat Monitoring. This tool helps in identifying potential data breaches, credential leaks, and discussions about organizations across various dark web sources.
+⚠️ **Educational Use Only** - Monitor dark web sources responsibly and ensure compliance with applicable laws.
+
+## Prerequisites
+
+### 1. Tor (Required)
+This tool REQUIRES Tor to function as it accesses .onion addresses. Without Tor, no searches will work.
+
+Choose one of these options:
+- **Option A: Tor Browser** (Recommended for beginners)
+  1. Download [Tor Browser](https://www.torproject.org/download/)
+  2. Install and launch it
+  3. Keep it running while using this tool
+
+- **Option B: Tor Service**
+  - On macOS:
+    ```bash
+    brew install tor
+    brew services start tor
+    ```
+  - On Linux:
+    ```bash
+    sudo apt install tor
+    sudo systemctl start tor
+    ```
+  - On Windows:
+    ```bash
+    choco install tor
+    ```
+
+Verify Tor is working:
+```bash
+curl --socks5 127.0.0.1:9050 https://check.torproject.org/api/ip
+```
+
+### 2. Python Requirements
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+### Web UI Mode (Streamlit)
+
+1. Ensure Tor is running (required)
+2. Start the web interface:
+   ```bash
+   streamlit run app.py
+   ```
+3. Access the UI in your browser (typically http://localhost:8501)
+4. Enter your organization name and API key
+5. Select your preferred LLM provider
+6. Click "Start Search" to begin monitoring
+
+### CLI Mode (darkweb_monitoring.py)
+
+1. Ensure Tor is running (required)
+2. Edit darkweb_monitoring.py to set your organization:
+   ```python
+   organization = "Your Organization Name"  # Change this line
+   ```
+3. Choose your LLM provider by uncommenting the appropriate model:
+   ```python
+   # Choose one of these:
+   model=OpenRouter(id="meta-llama/llama-4-maverick:free")
+   #model=Groq(id="llama-3.3-70b-versatile")
+   ```
+4. Run the script:
+   ```bash
+   python darkweb_monitoring.py
+   ```
+
+The script will automatically:
+- Search all configured dark web sources
+- Show real-time progress for each source
+- Display connection status
+- Provide detailed findings in categories
 
 ## Features
 
-- Automated dark web searching across multiple onion sites
-- Integration with Tor network
-- Support for multiple dark web search engines
-- Categorized findings (Data Breaches, Credential Leaks, Discussions)
-- Powered by Agno framework and LLM models
+- **Multiple Sources**: Searches across various dark web sources including:
+  - Search Engines (Ahmia, Torch, DuckDuckGo)
+  - News & Information (BBC, CIA, ProPublica)
+  - Special Services (Hidden Wiki, SecureDrop, Darknetlive)
+
+- **Comprehensive Analysis**:
+  - Connection status tracking
+  - Source accessibility checking
+  - Detailed findings report
+  - Downloadable results
+
+- **LLM Provider Support**:
+  - OpenRouter (Llama)
+  - OpenAI GPT-4
+  - Anthropic Claude 3
+  - Google Gemini Pro
+
+## Security Notes
+
+- Always use Tor for dark web access
+- Keep API keys secure
+- Review findings carefully
+- Follow responsible disclosure practices
+
+## Contributing
+
+Feel free to submit issues, fork the repository, and create pull requests for any improvements.
+
+## License
+
+MIT License - See LICENSE file for details
+
+## Features 🌟
+
+- Dark web source monitoring
+- Multiple LLM provider support (OpenAI, Anthropic Claude, Google Gemini)
+- Real-time search progress tracking
+- Risk assessment and analysis
+- Security recommendations
+- User-friendly Streamlit interface
 
 ## Currently Monitored Sites
 
@@ -33,59 +143,19 @@ Here's what the tool looks like in action:
 ![Dark Web Monitor Output](screenshots/output.png)
 ![Search Results](screenshots/results.png)
 
+*Note: Place your screenshots in a `screenshots` folder in the root directory of the project with the names `output.png` and `results.png`*
 
-## Prerequisites
-
-- Python 3.8+
-- Tor Browser or Tor service running on port 9050
-- Active internet connection
-
-## Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/shadsidd/DarkWeb-Monitoring.git
-cd DarkWeb-Monitoring
-```
-
-2. Install required dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-3. Ensure Tor service is running on port 9050
-
-## Usage
-
-1. Run the script:
-```bash
-python darkweb_updated_working.py
-```
-
-2. The tool will automatically:
-   - Connect to various dark web search engines
-   - Search for mentions of the specified organization
-   - Categorize and analyze findings
-   - Present a detailed report
-
-## Configuration
-
-Just type/update organization name on line number 9 in 
-
-## Security Notice
-
-- Always use a VPN and Tor when accessing dark web resources
-- Do not use personal or work credentials
-- This tool is for educational purposes only
-- Follow all applicable laws and regulations
 
 ## Dependencies
 
 See `requirements.txt` for a complete list of dependencies.
 
-## License
+## Security Notice
 
-This project is for educational purposes only. Use responsibly.
+- Do not use personal or work credentials
+- This tool is for educational purposes only
+- Follow all applicable laws and regulations
+- Keep your API keys secure and never share them
 
 ## Disclaimer
 
