@@ -73,6 +73,13 @@ pip install -r requirements.txt
    python darkweb_monitoring.py
    ```
 
+### Output
+1. Web UI
+![Screenshot 2025-04-06 at 9 40 07 PM](https://github.com/user-attachments/assets/67349242-6f0d-4278-99ee-a82285a7bf04)
+
+2. CLI
+![Screenshot 2025-04-06 at 3 58 10 PM](https://github.com/user-attachments/assets/2f48dcfb-6f38-43d6-b066-03ac16aa2f13)
+
 The script will automatically:
 - Search all configured dark web sources
 - Show real-time progress for each source
@@ -92,7 +99,7 @@ The script will automatically:
   - Detailed findings report
   - Downloadable results
 
-- **LLM Provider Support**:
+- **LLM Provider Support In UI **:
   - OpenRouter (Llama)
   - OpenAI GPT-4
   - Anthropic Claude 3
