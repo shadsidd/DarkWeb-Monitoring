@@ -305,7 +305,7 @@ Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
     
     # Footer
     st.markdown("""<div class="footer">Made for cybersecurity research | 
-    <a href='https://github.com/shadabs/DarkWeb-Monitoring'>GitHub</a></div>""", unsafe_allow_html=True)
+    <a href='https://github.com/shadsidd/DarkWeb-Monitoring</a></div>""", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main() 
